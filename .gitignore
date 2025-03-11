@@ -1,0 +1,17 @@
+cmd/logs_server.yaml
+cmd/logs_agent.yaml
+
+build
+logs-agent
+logs-server
+PilotGo-plugin-logs-server
+PilotGo-plugin-logs-agent
+
+cmd/server/webserver/frontendResource/assets/
+cmd/server/webserver/frontendResource/index.html
+cmd/server/webserver/frontendResource/vite.svg
+
+web/node_modules
+web/dist/
+
+vendor/
