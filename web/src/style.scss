@@ -1,0 +1,69 @@
+/* 1.重置样式 */  
+* {  
+  margin: 0;  
+  padding: 0;  
+  box-sizing: border-box;  
+}  
+html {
+  width: 100%;
+  height: 100%;
+  font-family: Inter, 'Helvetica Neue', Helvetica, 'PingFang SC',
+  'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+/* 2.盒模型 */  
+body {
+  width: 100%;
+  height: 100%;    
+  line-height: 2.4;  
+}  
+  
+/* 3.字体和排版 */  
+h1, h2, h3, h4, h5, h6 {  
+  font-weight: bold;  
+}  
+  
+p {  
+  margin-bottom: 15px;  
+}  
+  
+/* 4.颜色和背景 */  
+body {  
+  background-color: #f5f5f5;  
+  color: #333;  
+}  
+  
+/* 5.布局和定位 */  
+.container {  
+  width: 100%;  
+  // max-width: 1200px;  
+  margin: 0 auto;  
+}  
+  
+/* 6.表单控件 */  
+input[type="text"],  
+input[type="email"],  
+textarea {  
+  padding: 10px;  
+  border-radius: 4px;  
+}  
+  
+/* 7.响应式设计 */  
+@media (max-width: 768px) {  
+  .container {  
+    padding-left: 15px;  
+    padding-right: 15px;  
+  }  
+}
+
+/* 8.滚动条样式修改 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+      background-color: #0003;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

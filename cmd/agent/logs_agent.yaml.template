@@ -1,0 +1,12 @@
+logs:
+  https_enabled: false
+  cert_file: ""
+  key_file: ""
+# 插件服务端服务器监听地址
+  server_listen_addr: "0.0.0.0:9995"
+log:
+  level: debug
+  driver: file # 可选stdout和file。stdout：输出到终端控制台；file：输出到path下的指定文件。
+  path: /opt/PilotGo/plugin/logs/agent/log/logs-agent.log
+  max_file: 1
+  max_size: 10485760

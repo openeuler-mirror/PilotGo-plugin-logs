@@ -1,0 +1,13 @@
+[Unit]
+Description=PilotGo plugin logs server
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3s
+ExecStart=/opt/PilotGo/plugin/logs/server/PilotGo-plugin-logs-server -conf /opt/PilotGo/plugin/logs/server
+
+[Install]
+WantedBy=multi-user.target
