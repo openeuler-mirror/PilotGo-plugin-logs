@@ -1,5 +1,5 @@
-cmd/logs_server.yaml
-cmd/logs_agent.yaml
+logs_server.yaml
+logs_agent.yaml
 
 build
 logs-agent
