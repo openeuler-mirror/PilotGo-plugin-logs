@@ -1,8 +1,8 @@
 /*
  * Copyright (c) KylinSoft  Co., Ltd. 2024.All rights reserved.
- * PilotGo-plugin-logs licensed under the Mulan Permissive Software License, Version 2. 
+ * PilotGo-plugin-logs licensed under the Mulan Permissive Software License, Version 2.
  * See LICENSE file for more details.
- * Author: Wangjunqi123 <wangjunqi@kylinos.cn> 
+ * Author: Wangjunqi123 <wangjunqi@kylinos.cn>
  * Date: Mon Dec 16 08:43:58 2024 +0800
  */
 package webserver
@@ -30,7 +30,6 @@ func InitWebServer() {
 
 	engine := gin.New()
 	engine.Use(gin.Recovery(), middleware.Logger([]string{
-		"/plugin_manage/bind",
 		"/",
 	}))
 	gin.SetMode(gin.ReleaseMode)
@@ -87,7 +86,6 @@ func InitWebServer() {
 	}()
 
 	time.Sleep(100 * time.Millisecond)
-	pluginclient.Global_Client.Wait4Bind()
 }
 
 func pluginRouter(_engine *gin.Engine) {
@@ -100,30 +98,5 @@ func pluginRouter(_engine *gin.Engine) {
 }
 
 func proxyRouter(_engine *gin.Engine) {
-	_engine.GET("/ws/proxy", WebsocketProxyHandle)
+	_engine.GET("/plugin/ws/logs", WebsocketProxyHandle)
 }
-
-// func testRouter(_engine *gin.Engine) {
-// 	_engine.PUT("/files/:filename", func(_ctx *gin.Context) {
-// 		filename, ok := _ctx.Params.Get("filename")
-// 		if !ok {
-// 			_ctx.JSON(http.StatusBadRequest, "path param error")
-// 			return
-// 		}
-
-// 		file, err := os.Create(fmt.Sprintf("/home/wjq/%s", filename))
-// 		if err != nil {
-// 			_ctx.JSON(http.StatusBadRequest, fmt.Sprintf("fail to create file: %s, %s", filename, err.Error()))
-// 			return
-// 		}
-// 		defer file.Close()
-
-// 		_, err = io.Copy(file, _ctx.Request.Body)
-// 		if err != nil {
-// 			_ctx.JSON(http.StatusBadRequest, fmt.Sprintf("io.copy error: %s", err.Error()))
-// 			return
-// 		}
-
-// 		_ctx.JSON(http.StatusCreated, "")
-// 	})
-// }

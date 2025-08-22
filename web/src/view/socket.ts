@@ -27,10 +27,10 @@ interface socket {
   reconnect: () => void
 }
 
-let wsProtocol = window.location.protocol === 'http' ? 'ws://' : 'wss://';
+let wsProtocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
 const socket: socket = {
   websocket: null,
-  connectURL: wsProtocol+"localhost:8888/plugin/ws/logs",
+  connectURL: wsProtocol + "localhost:9994/plugin/ws/logs",
   // 开启标识
   socket_open: false,
   // 心跳timer
@@ -60,7 +60,7 @@ const socket: socket = {
       return socket.websocket
     } */
 
-    socket.websocket = new WebSocket(socket.connectURL+`?clientId=${useLogStore().clientId}`)
+    socket.websocket = new WebSocket(socket.connectURL + `?clientId=${useLogStore().clientId}`)
     socket.websocket.onmessage = (e: any) => {
       if (receiveMessage) {
         receiveMessage(e)
@@ -68,7 +68,7 @@ const socket: socket = {
     }
 
     socket.websocket.onclose = (e: any) => {
-      console.log('检测到关闭',e)
+      console.log('检测到关闭', e)
       useLogStore().ws_isOpen = false;
       clearInterval(socket.hearbeat_interval)
       socket.socket_open = false
@@ -102,8 +102,8 @@ const socket: socket = {
     }
 
     // 连接发生错误
-    socket.websocket.onerror = function (e:any) {
-      console.log('连接发生错误',e)
+    socket.websocket.onerror = function (e: any) {
+      console.log('连接发生错误', e)
       useLogStore().ws_isOpen = false;
     }
   },
