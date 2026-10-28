@@ -5,8 +5,8 @@ Version:        1.0.0
 Release:        1
 Summary:        logs plugin for PilotGo
 License:        MulanPSL-2.0
-URL:            https://gitee.com/openeuler/PilotGo-plugin-logs
-Source0:        https://gitee.com/src-openeuler/PilotGo-plugin-logs/%{name}-%{version}.tar.gz
+URL:            https://atomgit.com/openeuler/PilotGo-plugin-logs
+Source0:        https://atomgit.com/src-openeuler/PilotGo-plugin-logs/%{name}-%{version}.tar.gz
 
 ExclusiveArch: x86_64 aarch64
 
